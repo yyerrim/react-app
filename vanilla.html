@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JavaScript DOM Example</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        let count = 0;
+        function render() {
+            const root = document.getElementById('root');
+            root.innerHTML = `
+    <div>
+    <h1>Vanilla JavaScript DOM Example</h1>
+    <p>Count: ${count}</p>
+    <button id="increment">Increment</button>
+    </div>`;
+            document.getElementById('increment').addEventListener('click', () => {
+                count++;
+                render();
+            });
+        }
+        render();
+    </script>
+</body>

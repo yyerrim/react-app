@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Virtual DOM Example</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+        function App() {
+            const [count, setCount] = useState(0);
+            return (
+                <div>
+                    <h1>React Virtual DOM Example</h1>
+                    <p>Count: {count}</p>
+                    <button onClick={() => setCount(count + 1)}>Increment</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
